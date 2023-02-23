@@ -1,12 +1,14 @@
 # rocm-build 5.3
 
+<!--
 [中文版](README_zh_CN.md)
+-->
 
 ### Thanks
 
-Thanks to [rigtorp](https://github.com/rigtorp) providing intial build steps <https://gist.github.com/rigtorp/d9483af100fb77cee57e4c9fa3c74245> , which contains build steps for HIP on ROCm-3.6.
+Thanks to [rigtorp](https://github.com/rigtorp) for providing intial build steps <https://gist.github.com/rigtorp/d9483af100fb77cee57e4c9fa3c74245> , which contains build steps for HIP on ROCm-3.6.
 
-Thanks to [jlgreathouse](https://github.com/jlgreathouse) providing <https://github.com/RadeonOpenCompute/Experimental_ROC> , which contains build steps for ROCm-2.0.
+Thanks to [jlgreathouse](https://github.com/jlgreathouse) for providing <https://github.com/RadeonOpenCompute/Experimental_ROC> , which contains build steps for ROCm-2.0.
 
 ### Start
 
@@ -28,7 +30,7 @@ Good luck.
 ### Download sources using repo.
 
 ```
-doas emerge dev-vcs/git-lfs
+doas emerge repo dev-vcs/git-lfs
 
 mkdir -p ~/ROCm/
 cd ~/ROCm/
