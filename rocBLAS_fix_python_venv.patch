@@ -1,8 +1,8 @@
 diff --git a/cmake/virtualenv.cmake b/cmake/virtualenv.cmake
-index 951755ae..10dad244 100644
+index 951755ae..8b378fab 100644
 --- a/cmake/virtualenv.cmake
 +++ b/cmake/virtualenv.cmake
-@@ -1,7 +1,7 @@
+@@ -1,13 +1,13 @@
  # find_package(PythonInterp)
  # # TODO: Check PYTHON_VERSION_MAJOR
  
@@ -11,3 +11,11 @@ index 951755ae..10dad244 100644
  if(NOT VIRTUALENV_PYTHON_EXE)
      # look for non default name
      if(${python} MATCHES "python3")
+-        find_program(VIRTUALENV_PYTHON_EXE python)
++        find_program(VIRTUALENV_PYTHON_EXE venv python)
+     else()
+-        find_program(VIRTUALENV_PYTHON_EXE python3)
++        find_program(VIRTUALENV_PYTHON_EXE venv python3)
+     endif()
+ endif()
+ 
