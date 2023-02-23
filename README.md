@@ -4,13 +4,13 @@
 
 ### Thanks
 
-Thanks [rigtorp](https://github.com/rigtorp) providing intial build steps <https://gist.github.com/rigtorp/d9483af100fb77cee57e4c9fa3c74245> , which contains build steps for HIP on ROCm-3.6.
+Thanks to [rigtorp](https://github.com/rigtorp) providing intial build steps <https://gist.github.com/rigtorp/d9483af100fb77cee57e4c9fa3c74245> , which contains build steps for HIP on ROCm-3.6.
 
-Thanks [jlgreathouse](https://github.com/jlgreathouse) providing <https://github.com/RadeonOpenCompute/Experimental_ROC> , which contains build steps for ROCm-2.0.
+Thanks to [jlgreathouse](https://github.com/jlgreathouse) providing <https://github.com/RadeonOpenCompute/Experimental_ROC> , which contains build steps for ROCm-2.0.
 
 ### Start
 
-My environment is Ubuntu-20.04.5.
+My environment is Gentoo.
 
 Please download sources using repo <https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html#getting-the-rocm-source-code>,
 and change the path of source in `env.sh`.
@@ -28,7 +28,7 @@ Good luck.
 ### Download sources using repo.
 
 ```
-sudo apt install -y repo
+doas emerge dev-vcs/git-lfs
 
 mkdir -p ~/ROCm/
 cd ~/ROCm/
@@ -36,30 +36,15 @@ repo init -u https://github.com/RadeonOpenCompute/ROCm.git -b roc-5.3.x
 repo sync
 ```
 
-Notice: there is no repo package on ubuntu-20.04, because of slow support for python3.
-<https://askubuntu.com/questions/1247103/why-is-the-repo-package-unavailable-in-ubuntu-20-04-how-can-i-install-it>
-
-Download and install repo manually on ubuntu-20.04.
-
-```
-mkdir -p ~/bin/
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
-export PATH=~/bin:$PATH
-```
-
 ### cmake version
 
 **Note**: rocBLAS need cmake-3.18.6 from ROCm-5.3. The version of default cmake from ubuntu-20.04 is cmake-3.16.3.
-We have to download <https://cmake.org/files/v3.18/cmake-3.18.6-Linux-x86_64.tar.gz> and unpack it to `/home/work/local`,
+We have to download <https://cmake.org/files/v3.18/cmake-3.18.6-Linux-x86_64.tar.gz> and unpack it to `/home/$whoami/Downloads`,
 and execute `source env.sh` to add custom cmake to PATH environment variables.
 If you want to use other location, please modify `env.sh`.
 
 ### Additional documentations:
 
-* [gfx803](gfx803) - AMD drop gfx803 offical support on ROCm-4.0, since gfx803 is my only GPU, I need find a way to let it work longer.
-* [navi10](navi10) - Experiment scripts for building navi10 GPU.
-* [navi14](navi14) - Experiment scripts for building navi14 GPU.
 * [check](check) - Codes for check whether ROCm can run successfully.
 * [ubuntu2204](ubuntu2204) - Patches for ubuntu-22.04.
 
