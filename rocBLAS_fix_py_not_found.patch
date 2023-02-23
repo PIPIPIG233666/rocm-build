@@ -1,0 +1,13 @@
+diff --git a/library/src/CMakeLists.txt b/library/src/CMakeLists.txt
+index 79f54f21..4ac4e495 100755
+--- a/library/src/CMakeLists.txt
++++ b/library/src/CMakeLists.txt
+@@ -504,7 +504,7 @@ file( GLOB rocblas_prototype_inputs
+ )
+ set( ROCBLAS_PROTO_TEMPLATES "${PROJECT_BINARY_DIR}/include/rocblas/internal/rocblas-exported-proto.hpp" )
+ add_custom_command(OUTPUT ${ROCBLAS_PROTO_TEMPLATES}
+-  COMMAND ${python} template-proto.py ${CMAKE_CURRENT_SOURCE_DIR}/blas3/Tensile/ ${CMAKE_CURRENT_SOURCE_DIR}/blas3/ ${CMAKE_CURRENT_SOURCE_DIR}/blas2/ ${CMAKE_CURRENT_SOURCE_DIR}/blas1/ > ${ROCBLAS_PROTO_TEMPLATES}
++  COMMAND ${python} ${CMAKE_CURRENT_SOURCE_DIR}/template-proto.py ${CMAKE_CURRENT_SOURCE_DIR}/blas3/Tensile/ ${CMAKE_CURRENT_SOURCE_DIR}/blas3/ ${CMAKE_CURRENT_SOURCE_DIR}/blas2/ ${CMAKE_CURRENT_SOURCE_DIR}/blas1/ > ${ROCBLAS_PROTO_TEMPLATES}
+   #DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/blas3/Tensile/ ${CMAKE_CURRENT_SOURCE_DIR}/blas3/ ${CMAKE_CURRENT_SOURCE_DIR}/blas2/ ${CMAKE_CURRENT_SOURCE_DIR}/blas1/
+   DEPENDS ${rocblas_prototype_inputs}
+   COMMENT "Generating prototypes from ${CMAKE_CURRENT_SOURCE_DIR}."
