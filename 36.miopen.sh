@@ -21,8 +21,8 @@ CXX=$ROCM_INSTALL_DIR/llvm/bin/clang++ cmake \
     $ROCM_GIT_DIR/MIOpen
 
 cmake --build .
-cmake --build . --target package
-sudo dpkg -i *.deb
+
+doas make install -j24
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

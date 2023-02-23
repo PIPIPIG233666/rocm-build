@@ -17,8 +17,8 @@ START_TIME=`date +%s`
 # dpkg -b half_1.12.0_amd64
 
 cmake $ROCM_GIT_DIR/half
-cmake --build . --target package
-sudo dpkg -i *.deb
+
+doas make install -j24
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

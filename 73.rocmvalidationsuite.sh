@@ -16,8 +16,8 @@ cmake \
     $ROCM_GIT_DIR/ROCmValidationSuite
 
 cmake --build .
-sudo cmake --build . --target package
-sudo dpkg -i *.deb
+sudo 
+doas make install -j24
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

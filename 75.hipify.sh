@@ -19,11 +19,11 @@ cmake \
 
 cmake --build .
 sudo cmake --build . --target install
-cmake --build . --target package_hipify-clang
+_hipify-clang
 #ninja
 #sudo ninja install
 #ninja package_hipify-clang
-sudo dpkg -i *.deb
+doas make install -j24
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
