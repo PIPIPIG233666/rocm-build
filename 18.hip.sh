@@ -20,10 +20,10 @@ cmake \
     -DCMAKE_PREFIX_PATH="$ROCM_INSTALL_DIR" \
     -DCMAKE_BUILD_TYPE=Release \
     -DROCM_PATCH_VERSION=50100 \
+    -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     -G Ninja \
     $ROCM_GIT_DIR/hipamd
 
-    # -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR/hip/install \
 ninja
 doas ninja install
 

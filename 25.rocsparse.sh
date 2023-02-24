@@ -12,12 +12,11 @@ pushd .
 
 START_TIME=`date +%s`
 
-CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
+FC=gfortran CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
     -DHIP_CLANG_INCLUDE_PATH=$ROCM_INSTALL_DIR/llvm/include \
     -DBUILD_CLIENTS_SAMPLES=OFF \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=rocsparse-install \
     -DROCM_PATH=$ROCM_INSTALL_DIR \
     -G Ninja \
     $ROCM_GIT_DIR/rocSPARSE

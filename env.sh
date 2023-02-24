@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export ROCM_INSTALL_DIR=/opt/rocm
+export ROCM_PATH=$ROCM_INSTALL_DIR
 export ROCM_MAJOR_VERSION=5
 export ROCM_MINOR_VERSION=4
 export ROCM_PATCH_VERSION=0

@@ -10,7 +10,7 @@ START_TIME=`date +%s`
 
 cmake \
     -DCMAKE_PREFIX_PATH="$ROCM_INSTALL_DIR" \
-    -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR/opencl \
+    -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     -Dhsa-runtime64_DIR=$ROCM_INSTALL_DIR/lib/cmake/hsa-runtime64 \
     -G Ninja \
     $ROCM_GIT_DIR/ROCm-OpenCL-Runtime

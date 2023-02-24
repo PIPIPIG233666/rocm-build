@@ -10,7 +10,6 @@ START_TIME=`date +%s`
 
 cmake \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=rocmvalidationsuite-install \
     -G Ninja \
     $ROCM_GIT_DIR/ROCmValidationSuite
 

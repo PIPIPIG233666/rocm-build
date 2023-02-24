@@ -18,7 +18,6 @@ CXX=$ROCM_INSTALL_DIR/hip/bin/hipcc cmake \
     -G Ninja \
     $ROCM_GIT_DIR/rocFFT
 
-    # -DCMAKE_INSTALL_PREFIX=rocfft-install \
 ninja
 doas ninja install
 
