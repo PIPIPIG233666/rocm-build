@@ -1,0 +1,13 @@
+diff --git a/src/rocm_smi_gpu_metrics.cc b/src/rocm_smi_gpu_metrics.cc
+index 1f9fad4..24b2a6f 100755
+--- a/src/rocm_smi_gpu_metrics.cc
++++ b/src/rocm_smi_gpu_metrics.cc
+@@ -45,7 +45,7 @@
+ #include <dirent.h>
+ 
+ #include <fstream>
+-#include <string>
++#include <cstring>
+ #include <cstdint>
+ #include <map>
+ #include <iostream>

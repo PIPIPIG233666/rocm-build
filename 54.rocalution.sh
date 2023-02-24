@@ -13,15 +13,11 @@ CXX=$ROCM_INSTALL_DIR/hip/bin/hipcc cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DSUPPORT_HIP=ON \
     -DROCM_PATH=$ROCM_INSTALL_DIR \
-    -DCPACK_SET_DESTDIR=OFF \
-    -DCPACK_PACKAGING_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
-    -DCMAKE_INSTALL_PREFIX=rocalution-install \
     -G Ninja \
     $ROCM_GIT_DIR/rocALUTION
 
-cmake --build .
-cmake --build . --target package
-sudo dpkg -i *.deb
+ninja
+doas ninja install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

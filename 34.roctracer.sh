@@ -20,12 +20,9 @@ export HSA_RUNTIME_INC=$ROCM_INSTALL_DIR/hsa/include/hsa/hsa.h
 
 cmake \
     -DGPU_TARGETS="$AMDGPU_TARGETS" \
-    -DCMAKE_MODULE_PATH=$ROCTRACER_ROOT/cmake_modules \
+    -DCMAKE_MODULE_PATH=$HIP_PATH/cmake \
     -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
     -DCMAKE_PREFIX_PATH="$PREFIX_PATH" \
-    -DCMAKE_INSTALL_PREFIX=$PACKAGE_ROOT \
-    -DCPACK_PACKAGING_INSTALL_PREFIX=$PACKAGE_PREFIX \
-    -DCPACK_GENERATOR="DEB" \
     -DCMAKE_SHARED_LINKER_FLAGS="$LD_RUNPATH_FLAG" \
     -DHIP_API_STRING="$HIP_API_STRING" \
     -DHIP_PATH=$ROCM_INSTALL_DIR/hip \
@@ -33,9 +30,8 @@ cmake \
     -G Ninja \
     $ROCTRACER_ROOT
 
-cmake --build .
-cmake --build . --target package
-sudo dpkg -i *.deb
+ninja
+doas ninja install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

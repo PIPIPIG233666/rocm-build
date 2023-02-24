@@ -14,11 +14,9 @@ cmake \
   -DPROJECT_VERSION_MINOR=${ROCM_MINOR_VERSION} \
   -DPROJECT_VERSION_PATCH=${ROCM_PATCH_VERSION} \
   -DROCM_PATCH_VERSION=${ROCM_LIBPATCH_VERSION} \
-  -DROCM_BUILD_VERSION=${CPACK_DEBIAN_PACKAGE_RELEASE} \
   $ROCM_BUILD_DIR/../src/rocm-libs
 
-cmake --build . --target package
-sudo dpkg -i *.deb
+doas make install -j24
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

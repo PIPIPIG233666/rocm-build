@@ -48,9 +48,5 @@ cd $TARGET_DIR/amd/dkms/
 bash autogen.sh
 cd ../..
 
-cd ../../..
-cp ../../meta/rock-dkms_5.3-63_all . -R
-cp -R usr rock-dkms_5.3-63_all/
 
-dpkg -b rock-dkms_5.3-63_all
 

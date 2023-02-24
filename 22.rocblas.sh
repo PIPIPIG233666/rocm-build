@@ -13,7 +13,6 @@ pushd .
 START_TIME=`date +%s`
 
 cd $ROCM_GIT_DIR/rocBLAS
-bash $ROCM_GIT_DIR/rocBLAS/install.sh -d
 
 CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
@@ -25,16 +24,11 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DTensile_LIBRARY_FORMAT=yaml \
     -DRUN_HEADER_TESTING=OFF \
     -DTensile_COMPILER=hipcc \
-    -DCPACK_SET_DESTDIR=OFF \
-    -DCMAKE_INSTALL_PREFIX=rocblas-install \
-    -DCPACK_PACKAGING_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
-    -DCPACK_GENERATOR=DEB \
     -G "Unix Makefiles" \
     $ROCM_GIT_DIR/rocBLAS
 
-cmake --build .
-cmake --build . --target package
-sudo dpkg -i *.deb
+make -j24
+doas make install -j24
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
