@@ -16,7 +16,7 @@ cmake \
   -DROCM_PATCH_VERSION=${ROCM_LIBPATCH_VERSION} \
   $ROCM_BUILD_DIR/../src/rocm-core
 
-doas ninja install
+doas make install -j24
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
