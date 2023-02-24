@@ -18,7 +18,7 @@ cmake \
   $ROCM_BUILD_DIR/../src/rocm-core
 
 cmake --build .
-doas make install -j24
+doas cmake --build . --target install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

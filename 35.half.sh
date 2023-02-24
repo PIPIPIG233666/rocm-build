@@ -18,7 +18,7 @@ START_TIME=`date +%s`
 
 cmake $ROCM_GIT_DIR/half
 
-doas make install -j24
+doas cmake --build . --target install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

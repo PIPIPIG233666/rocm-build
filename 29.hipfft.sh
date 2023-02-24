@@ -8,7 +8,7 @@ pushd .
 
 START_TIME=`date +%s`
 
-CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
+CXX=hipcc cmake \
     -DROCM_PATH=$ROCM_INSTALL_DIR \
     -DHIP_ROOT_DIR=$ROCM_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
@@ -20,7 +20,7 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
 
 cmake --build .
 
-doas make install -j24
+doas cmake --build . --target install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

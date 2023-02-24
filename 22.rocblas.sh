@@ -13,9 +13,8 @@ pushd .
 START_TIME=`date +%s`
 
 cd $ROCM_GIT_DIR/rocBLAS
-bash $ROCM_GIT_DIR/rocBLAS/install.sh -d
 
-CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
+CXX=hipcc cmake \
     -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
     -DROCM_PATH=$ROCM_INSTALL_DIR \
     -DTensile_LOGIC=asm_full \
@@ -34,7 +33,7 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
 
 cmake --build .
 
-doas make install -j24
+doas cmake --build . --target install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

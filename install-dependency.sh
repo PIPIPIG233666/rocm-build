@@ -16,16 +16,13 @@ sudo apt install -y libelf-dev
 sudo apt install -y pciutils
 
 # 18.hip
-sudo apt install -y mesa-common-dev \
-                    dpkg-dev rpm libelf-dev rename liburi-encode-perl \
-                    libfile-basedir-perl libfile-copy-recursive-perl libfile-listing-perl libfile-which-perl \
-                    file doxygen
+doas emerge CppHeaderParser
 
 # 21.rocfft
 sudo apt install -y python3-dev
 
 # 22.rocblas
-sudo apt install -y gfortran python3-venv libtinfo-dev libmsgpack-dev
+doas emerge fortran
 
 # 33.roctracer
 pip3 install cppheaderparser

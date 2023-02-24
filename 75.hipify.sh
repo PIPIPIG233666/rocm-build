@@ -18,12 +18,12 @@ cmake \
     $ROCM_GIT_DIR/HIPIFY
 
 cmake --build .
-sudo cmake --build . --target install
+sudo doas cmake --build . --target install
 _hipify-clang
 #ninja
 #sudo ninja install
 #ninja package_hipify-clang
-doas make install -j24
+doas cmake --build . --target install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

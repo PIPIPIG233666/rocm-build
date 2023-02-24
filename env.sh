@@ -11,6 +11,6 @@ export ROCM_GIT_DIR=/home/pppig/ROCm
 export ROCM_BUILD_DIR=/home/pppig/rocm-build/build
 export ROCM_PATCH_DIR=/home/pppig/rocm-build/patch
 export AMDGPU_TARGETS="gfx1030"
-export CMAKE_DIR=/home/pppig/Downloads/cmake-3.18.6-Linux-x86_64/
+export CMAKE_DIR=/home/pppig/Downloads/cmake-3.18.6-Linux-x86_64
 export PATH=$ROCM_INSTALL_DIR/bin:$ROCM_INSTALL_DIR/llvm/bin:$ROCM_INSTALL_DIR/hip/bin:$CMAKE_DIR/bin:$PATH
-
+export ROCM_PATH=/opt/rocm

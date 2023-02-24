@@ -17,7 +17,7 @@ cmake \
     -DHIP_COMMON_DIR="$HIP_DIR" \
     -DAMD_OPENCL_PATH="$OPENCL_DIR" \
     -DROCCLR_PATH="$ROCCLR_DIR" \
-    -DCMAKE_PREFIX_PATH="$ROCM_INSTALL_DIR" \
+    -DCMAKE_INSTALL_PREFIX=$ROCM_PATH \
     -DCMAKE_BUILD_TYPE=Release \
     -DCPACK_GENERATOR=DEB \
     -DROCM_PATCH_VERSION=50100 \
@@ -26,6 +26,9 @@ cmake \
 
 cmake --build .
 doas cmake --build . --target install
+
+# ?
+doas ln -sf /opt/rocm/hip/lib/**so /opt/rocm/lib/
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
