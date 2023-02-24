@@ -24,6 +24,7 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DTensile_LIBRARY_FORMAT=yaml \
     -DRUN_HEADER_TESTING=OFF \
     -DTensile_COMPILER=hipcc \
+    -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     -G "Unix Makefiles" \
     $ROCM_GIT_DIR/rocBLAS
 
