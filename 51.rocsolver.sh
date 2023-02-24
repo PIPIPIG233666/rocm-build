@@ -16,6 +16,7 @@ CXX=$ROCM_INSTALL_DIR/hip/bin/hipcc cmake \
     -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
     -DCMAKE_BUILD_TYPE=Release \
     -G Ninja \
+    -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     $ROCM_GIT_DIR/rocSOLVER
 
 ninja
