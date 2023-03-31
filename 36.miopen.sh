@@ -2,6 +2,12 @@
 
 set -e
 #
+# git clone https://github.com/nlohmann/json.git
+# cd json && mkdir build && cd build
+# cmake ..
+# make -j24
+# doas make install
+
 # git clone git clone https://github.com/boostorg/boost
 # git co 5df8086b733798c8e08e316626a16babe11bd0d2
 # git submodule update --init

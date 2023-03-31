@@ -12,7 +12,7 @@ pushd .
 
 START_TIME=`date +%s`
 
-CC=clang++ $ROCM_GIT_DIR/ROCgdb/configure --program-prefix=roc \
+CC=$ROCM_INSTALL_DIR/llvm/bin/clang $ROCM_GIT_DIR/ROCgdb/configure --program-prefix=roc \
   --enable-64-bit-bfd --enable-targets="x86_64-linux-gnu,amdgcn-amd-amdhsa" \
   --disable-ld --disable-gas --disable-gdbserver --disable-sim --enable-tui \
   --disable-gdbtk --disable-shared --with-expat --with-system-zlib \
