@@ -17,7 +17,7 @@ cmake \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR/llvm/ \
     -DLLVM_ENABLE_ASSERTIONS=1 \
     -DLLVM_TARGETS_TO_BUILD="AMDGPU;X86" \
-    -DLLVM_ENABLE_PROJECTS="compiler-rt;lld;clang;flang" \
+    -DLLVM_ENABLE_PROJECTS="compiler-rt;lld;clang;flang;llvm" \
     -G Ninja \
     $ROCM_GIT_DIR/llvm-project/llvm
 

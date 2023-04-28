@@ -8,7 +8,7 @@ pushd .
 
 START_TIME=`date +%s`
 
-cmake \
+CC=/opt/rocm/llvm/bin/clang cmake \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
     -G Ninja \
@@ -16,6 +16,7 @@ cmake \
 
 ninja
 doas ninja install
+doas ln -sf /opt/rocm/lib64/librocm-dbgapi.so** /opt/rocm/lib/
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
