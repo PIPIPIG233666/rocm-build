@@ -10,14 +10,12 @@ Thanks [jlgreathouse](https://github.com/jlgreathouse) providing <https://github
 
 ### Start
 
-My environment is Ubuntu-20.04.5.
+My environment is Gentoo Linux 2.13
 
 Please download sources using repo <https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html#getting-the-rocm-source-code>,
 and change the path of source in `env.sh`.
 
 Execute `source env.sh` to setup environment variables.
-
-Execute `bash install-dependency.sh` to install dependencies
 
 Then execute bash scripts by order number.
 
@@ -47,13 +45,6 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 export PATH=~/bin:$PATH
 ```
-
-### cmake version
-
-**Note**: rocBLAS need cmake-3.18.6 from ROCm-5.3. The version of default cmake from ubuntu-20.04 is cmake-3.16.3.
-We have to download <https://cmake.org/files/v3.18/cmake-3.18.6-Linux-x86_64.tar.gz> and unpack it to `/home/work/local`,
-and execute `source env.sh` to add custom cmake to PATH environment variables.
-If you want to use other location, please modify `env.sh`.
 
 ### Additional documentations:
 
