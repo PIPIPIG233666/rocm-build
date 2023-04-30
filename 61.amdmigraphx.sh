@@ -1,24 +1,24 @@
 #!/bin/bash
 
+
+WORKON_HOME=~/virtenv
+source virtualenvwrapper.sh
+workon SD-py311
+pip3 install https://github.com/RadeonOpenCompute/rbuild/archive/master.tar.gz
+
 set -e
 
-CXX=$ROCM_INSTALL_DIR/llvm/bin/clang++ \
-  doas cmake -P $ROCM_GIT_DIR/AMDMIGraphX/install_deps.cmake --prefix /usr/local
+# account for installation folder difference
+sed -i 's|#include <rocblas.h>|#include <rocblas/rocblas.h>|g' $ROCM_GIT_DIR/AMDMIGraphX/src/targets/gpu/gemm_impl.cpp
+sed -i 's|#include <rocblas.h>|#include <rocblas/rocblas.h>|g' $ROCM_GIT_DIR/AMDMIGraphX/src/targets/gpu/include/migraphx/gpu/rocblas.hpp
 
-mkdir -p $ROCM_BUILD_DIR/amdmigraphx
-cd $ROCM_BUILD_DIR/amdmigraphx
-pushd .
+cd $ROCM_GIT_DIR/AMDMIGraphX
+rbuild build -d depend -B build
+
+cd build
+doas make install
 
 START_TIME=`date +%s`
-
-CXX=$ROCM_INSTALL_DIR/llvm/bin/clang++ cmake \
-    -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
-    -DCMAKE_BUILD_TYPE=Release \
-    -G Ninja \
-    $ROCM_GIT_DIR/AMDMIGraphX
-
-ninja
-doas ninja install
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
