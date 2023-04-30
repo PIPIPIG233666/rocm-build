@@ -1,5 +1,5 @@
 
-#include "rocblas.h"
+#include "rocblas/rocblas.h"
 
 int main()
 {
