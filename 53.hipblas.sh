@@ -11,6 +11,7 @@ START_TIME=`date +%s`
 CXX=$ROCM_INSTALL_DIR/hip/bin/hipcc cmake \
     -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
     -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/hipBLAS
 

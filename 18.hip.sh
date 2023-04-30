@@ -21,14 +21,12 @@ cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DROCM_PATCH_VERSION=50100 \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/hipamd
 
 ninja
 doas ninja install
-
-# ?
-doas ln -sf /opt/rocm/hip/lib/**.so** /opt/rocm/lib/
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

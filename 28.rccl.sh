@@ -18,6 +18,7 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_TESTS=OFF \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/rccl
 

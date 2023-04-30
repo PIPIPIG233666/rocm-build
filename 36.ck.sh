@@ -2,9 +2,10 @@
 
 set -e
 
-# if [ ! -d $ROCM_GIT_DIR/ck ; then]
-git clone https://github.com/ROCmSoftwarePlatform/composable_kernel $ROCM_GIT_DIR/ck
-#
+if [ ! -d $ROCM_GIT_DIR/ck ]; then
+  git clone https://github.com/ROCmSoftwarePlatform/composable_kernel $ROCM_GIT_DIR/ck;
+fi
+
 mkdir -p $ROCM_BUILD_DIR/ck
 cd $ROCM_BUILD_DIR/ck
 pushd .

@@ -12,6 +12,7 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_CUDA=OFF \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/hipSPARSE
 

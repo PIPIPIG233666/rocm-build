@@ -18,6 +18,7 @@ FC=gfortran CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DBUILD_CLIENTS_SAMPLES=OFF \
     -DCMAKE_BUILD_TYPE=Release \
     -DROCM_PATH=$ROCM_INSTALL_DIR \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/rocSPARSE
 

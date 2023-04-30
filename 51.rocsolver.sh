@@ -17,6 +17,7 @@ CXX=$ROCM_INSTALL_DIR/hip/bin/hipcc cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -G Ninja \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     $ROCM_GIT_DIR/rocSOLVER
 
 ninja

@@ -27,6 +27,7 @@ CXX=$ROCM_INSTALL_DIR/llvm/bin/clang++ cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DMIOPEN_USE_MLIR=0 \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/MIOpen
 

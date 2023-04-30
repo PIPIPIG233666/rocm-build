@@ -12,6 +12,7 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     -DROCM_PATH=$ROCM_INSTALL_DIR \
     -DHIP_ROOT_DIR=$ROCM_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/hipFFT
 
