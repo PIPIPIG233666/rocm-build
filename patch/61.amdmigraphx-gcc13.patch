@@ -1,0 +1,12 @@
+diff --git a/src/include/migraphx/value.hpp b/src/include/migraphx/value.hpp
+index a80185956..424a472e5 100644
+--- a/src/include/migraphx/value.hpp
++++ b/src/include/migraphx/value.hpp
+@@ -37,6 +37,7 @@
+ #include <tuple>
+ #include <unordered_map>
+ #include <vector>
++#include <cstdint>
+ 
+ namespace migraphx {
+ inline namespace MIGRAPHX_INLINE_NS {
