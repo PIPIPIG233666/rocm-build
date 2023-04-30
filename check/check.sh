@@ -2,6 +2,7 @@
 
 export PATH=/opt/rocm/bin:$PATH
 
+rm -rf build
 mkdir -p build
 
 hipcc -D__HIP_PLATFORM_HCC__ src/hello_hip.cpp -o build/hello_hip
@@ -52,3 +53,6 @@ hipcc -D__HIP_PLATFORM_HCC__ -I/opt/rocm/rocrand/include -lhiprand -L/opt/rocm/l
 hipcc -D__HIP_PLATFORM_HCC__ -I/opt/rocm/hipfft/include -lhipfft -L/opt/rocm/lib src/hello_hipfft.cpp -o build/hello_hipfft
 ./build/hello_hipfft
 
+python test-pytorch-device.py
+python test-pytorch-fc.py
+python test-pytorch-rocblas.py
