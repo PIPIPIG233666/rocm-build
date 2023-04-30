@@ -1,0 +1,13 @@
+diff --git a/rcqt.so/src/action.cpp b/rcqt.so/src/action.cpp
+index 8753242..d7595fb 100644
+--- a/rcqt.so/src/action.cpp
++++ b/rcqt.so/src/action.cpp
+@@ -70,7 +70,7 @@
+ 
+ #if DRVS_OS_TYPE_NUM == 1
+ // debian defines
+-#elseif DRVS_OS_TYPE_NUM == 2
++#elif DRVS_OS_TYPE_NUM == 2
+ // fedora defines
+ #endif
+ 
