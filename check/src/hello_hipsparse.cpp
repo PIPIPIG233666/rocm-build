@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #include <hip/hip_runtime.h>
-#include <hipsparse.h>
+#include <hipsparse/hipsparse.h>
 
 int main()
 {

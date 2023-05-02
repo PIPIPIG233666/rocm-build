@@ -2,6 +2,15 @@
 
 set -e
 
+# CMake Warning at src/CMakeLists.txt:257 (message):
+# Profiling API header not found.  Disabling roctracer integration.  Use
+# -DPROF_API_HEADER_PATH=<path to prof_protocol.h header>
+# rerun after running 34.roctracer.sh
+
+cd $ROCM_GIT_DIR/ROCclr
+git reset --hard
+git apply $ROCM_PATCH_DIR/18.hip-gcc13.patch
+
 mkdir -p $ROCM_BUILD_DIR/hip
 cd $ROCM_BUILD_DIR/hip
 pushd .

@@ -1,5 +1,7 @@
 # rocm-build 5.5
 
+## tracer & profiler do NOT build
+
 [中文版](README_zh_CN.md)
 
 ### Thanks

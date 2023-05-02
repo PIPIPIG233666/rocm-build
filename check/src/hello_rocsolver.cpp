@@ -1,5 +1,5 @@
 
-#include "rocsolver.h"
+#include <rocsolver/rocsolver.h>
 
 int main()
 {

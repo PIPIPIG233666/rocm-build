@@ -1,5 +1,5 @@
 
-#include "hipblas.h"
+#include <hipblas/hipblas.h>
 
 int main()
 {

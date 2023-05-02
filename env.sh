@@ -11,4 +11,5 @@ export ROCM_BUILD_DIR=/home/pppig/rocm-build/build
 export ROCM_PATCH_DIR=/home/pppig/rocm-build/patch
 export AMDGPU_TARGETS="gfx1030"
 export PATH=$ROCM_INSTALL_DIR/bin:$ROCM_INSTALL_DIR/llvm/bin:$ROCM_INSTALL_DIR/hip/bin:$PATH
+export HIP_CLANG_PATH=$ROCM_INSTALL_DIR/llvm/bin
 

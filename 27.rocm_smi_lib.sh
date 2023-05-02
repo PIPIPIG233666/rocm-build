@@ -16,13 +16,12 @@ START_TIME=`date +%s`
 cmake \
     -DCMAKE_INSTALL_PREFIX=$ROCM_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -G Ninja \
     $ROCM_GIT_DIR/rocm_smi_lib
 
 ninja
 doas ninja install
-
-doas ln -sf  /opt/rocm/rocm_smi/lib/** /opt/rocm/lib/
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

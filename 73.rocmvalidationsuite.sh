@@ -2,6 +2,10 @@
 
 set -e
 
+cd $ROCM_GIT_DIR/ROCmValidationSuite
+git reset --hard
+git apply $ROCM_PATCH_DIR/73.rocmvalidationsuite-gcc13.patch
+
 mkdir -p $ROCM_BUILD_DIR/rocmvalidationsuite
 cd $ROCM_BUILD_DIR/rocmvalidationsuite
 pushd .

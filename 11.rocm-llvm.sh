@@ -6,6 +6,13 @@ echo "|====|"
 echo "|SLOW|"
 echo "|====|"
 
+cd $ROCM_GIT_DIR/llvm-project
+git reset --hard
+git apply $ROCM_PATCH_DIR/11.rocm-llvm-gcc13-flang.patch
+git apply $ROCM_PATCH_DIR/11.rocm-llvm-gcc13-llvm.patch
+git apply $ROCM_PATCH_DIR/11.rocm-llvm-gcc13-openmp.patch
+git apply $ROCM_PATCH_DIR/11.rocm-llvm-gcc13-openmp2.patch
+
 mkdir -p $ROCM_BUILD_DIR/llvm-amdgpu
 cd $ROCM_BUILD_DIR/llvm-amdgpu
 pushd .

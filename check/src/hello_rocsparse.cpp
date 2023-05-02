@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #include <hip/hip_runtime.h>
-#include <rocsparse.h>
+#include <rocsparse/rocsparse.h>
 
 int main()
 {

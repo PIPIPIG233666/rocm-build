@@ -1,5 +1,5 @@
 
-#include "rocfft.h"
+#include <rocfft/rocfft.h>
 
 char status_text[10] = "failure";
 

@@ -1,5 +1,5 @@
 
-#include <rccl.h>
+#include <rccl/rccl.h>
 
 int main()
 {

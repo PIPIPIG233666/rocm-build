@@ -6,6 +6,9 @@ echo "|====|"
 echo "|SLOW|"
 echo "|====|"
 
+# run hipify first
+export PATH=$ROCM_BUILD_DIR/hipify/dist/:$PATH
+
 mkdir -p $ROCM_BUILD_DIR/rccl
 cd $ROCM_BUILD_DIR/rccl
 pushd .

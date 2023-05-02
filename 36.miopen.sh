@@ -16,6 +16,9 @@ set -e
 #
 # doas cmake -P $ROCM_GIT_DIR/MIOpen/install_deps.cmake --prefix /usr/local
 #
+cd $ROCM_GIT_DIR/MIOpen
+git lfs pull --include=src/kernels/gfx1030_36.kdb.bz2 --exclude=
+
 mkdir -p $ROCM_BUILD_DIR/miopen
 cd $ROCM_BUILD_DIR/miopen
 pushd .
