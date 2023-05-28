@@ -1,5 +1,6 @@
 
-#include "hipfft/hipfft.h"
+#include <cstdio>
+#include <hipfft/hipfft.h>
 
 char status_text[10] = "failure";
 

@@ -8,7 +8,7 @@ pushd .
 
 START_TIME=`date +%s`
 
-CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
+CXX=hipcc cmake \
     -DROCM_PATH=$ROCM_INSTALL_DIR \
     -DHIP_ROOT_DIR=$ROCM_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \

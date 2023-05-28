@@ -15,7 +15,7 @@ pushd .
 
 START_TIME=`date +%s`
 
-CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
+CXX=/usr/bin/hipcc cmake \
     -DAMDGPU_TARGETS=$AMDGPU_TARGETS \
     -DHIP_CLANG_INCLUDE_PATH=$ROCM_INSTALL_DIR/llvm/include \
     -DCMAKE_BUILD_TYPE=Release \

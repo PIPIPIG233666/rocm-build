@@ -1,5 +1,6 @@
 
 #include "thrust/version.h"
+#include <cstdio>
 
 int main()
 {

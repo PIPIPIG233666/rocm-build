@@ -3,6 +3,7 @@
 
 #include <hip/hip_runtime.h>
 #include <rocsparse/rocsparse.h>
+#include <cstdio>
 
 int main()
 {

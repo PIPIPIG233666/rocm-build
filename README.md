@@ -56,3 +56,21 @@ export PATH=~/bin:$PATH
 * [check](check) - Codes for check whether ROCm can run successfully.
 * [ubuntu2204](ubuntu2204) - Patches for ubuntu-22.04.
 
+### Current version
+```
+[HIP]        50530201
+[rocBLAS]    2.47.0.
+[rocFFT]     1.0.21.
+[rocPRIM]    201009
+[rocRAND]    201016
+[rocSPARSE]  200501
+[rccl]       21505
+[MIOpen]     2 19 0
+[rocSOVLER]  3.21.0.
+[rocThrust]  101702
+[hipCUB]     201012
+[hipBLAS]    0 54 0
+[hipSPARSE]  200306
+[hipRAND]    201016
+[hipFFT]     10021
+```

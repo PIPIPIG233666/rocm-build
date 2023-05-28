@@ -1,5 +1,6 @@
 
 #include <rocfft/rocfft.h>
+#include <cstdio>
 
 char status_text[10] = "failure";
 

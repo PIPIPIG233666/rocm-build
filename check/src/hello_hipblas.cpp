@@ -1,5 +1,6 @@
 
 #include <hipblas/hipblas.h>
+#include <cstdio>
 
 int main()
 {

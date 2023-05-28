@@ -1,5 +1,6 @@
 
 #include <miopen/miopen.h>
+#include <cstdio>
 
 int main()
 {
