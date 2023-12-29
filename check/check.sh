@@ -51,6 +51,6 @@ hipcc -D__HIP_PLATFORM_HCC__ -lhiprand src/hello_hiprand.cpp -o build/hello_hipr
 hipcc -D__HIP_PLATFORM_HCC__ -lhipfft src/hello_hipfft.cpp -o build/hello_hipfft
 ./build/hello_hipfft
 
-python test-pytorch-device.py
-python test-pytorch-fc.py
-python test-pytorch-rocblas.py
+python3.11 test-pytorch-device.py
+python3.11 test-pytorch-fc.py
+python3.11 test-pytorch-rocblas.py
